@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程产品</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script rel="script" src="js/jquery.min.js"></script>
+    <script rel="script" src="js/hook.js"></script>
+</head>
+<body>
+<div class="hook_one">
+    <div class="hookone_one">
+        <a href="index.html"><img src="images/hookone.png" class="hookone_oneimg"></a>
+    </div>
+    <ul class="hookone_two">
+        <li><a  class="hookone_twoa"  href="about.html">关于勾勾<p class="hookone_twop">ABOUT</p></a></li>
+        <li><a class="hookone_twoa about_a" href="product.html">课程产品<p class="hookone_twop">COURSE</p></a></li>
+        <li class="hookone_twoli"><a class="hookone_twoa"  href="study.html">学习资料<p class="hookone_twop">LEARNING</p></a></li>
+    </ul>
+</div>
+<div class="pro_box">
+    <a href="product_one.html">
+        <div class="pro_one">
+            <div class="prone_con">
+                <span class="pro_onesp">播下母语种子</span>
+                <span class="pro_onean">2-6岁语言启蒙时期</span>
+                <p class="pro_onep">引导全英文学习兴趣<br>启发全英文美式思维<br>培养全英文学习习惯</p>
+                <b class="pro_oneb">了解详情</b>
+            </div>
+        </div>
+    </a>
+    <a href="product_two.html">
+        <div class="pro_one pro_two">
+            <div class="prone_con">
+                <span class="pro_onesp">培育核心能力</span>
+                <span class="pro_onean">6-12岁语言积累时期</span>
+                <p class="pro_onep">培养全英文自主学习习惯<br>获取国际认证测试好成绩<br>全浸入式英语环境适应<br>全英文沟通互动能力养成</p>
+                <b class="pro_oneb">了解详情</b>
+            </div>
+        </div>
+    </a>
+    <a href="product_thr.html">
+        <div class="pro_one pro_thr">
+            <div class="prone_con">
+                <span class="pro_onesp">收获卓越成果</span>
+                <span class="pro_onean">12-18岁语言收获时期</span>
+                <p class="pro_onep">全英文语境批判思维能力<br>学习能力无缝衔接国际教育<br>根据学科兴趣选择未来方向<br>托福或雅思考试获取优异成绩<br>获取国际认证测试好成绩</p>
+                <b class="pro_oneb">了解详情</b>
+            </div>
+        </div>
+    </a>
+</div>
+<div id="goToTop" ><a href="javascript:;"><img src="images/upup.png" class="goToTopa"></a></div>
+<script src="js/swiper.min.js"></script>
+<script src="js/scrollReveal.js"></script>
+<script>
+    (function(){
+        window.scrollReveal = new scrollReveal({ reset: true,duration: 800, distance   : "0px"});
+        $('#goToTop').hide();        //隐藏go to top按钮
+        $(window).scroll(function(){
+            // console.log($(this).scrollTop());
+            //当window的scrolltop距离大于1时，go to
+            if($(this).scrollTop() > 100){
+                $('#goToTop').fadeIn();
+            }else{
+                $('#goToTop').fadeOut();
+            }
+        });
+        $('#goToTop a').click(function(){
+            $('html ,body').animate({scrollTop: 0}, 300);
+            return false;
+        });
+    })();
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop:true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    $('.aboution span').click(function() {
+        var i = $(this).index();//下标第一种写法
+        $(this).addClass('spantion').siblings().removeClass('spantion');
+        $('.contion').eq(i).show().siblings().hide();
+    });
+    //点击按钮
+    $('.auction_oneipt').on('click',function () {
+        ($(this).addClass('auction_twoipt'))
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习资料</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script rel="script" src="js/jquery.min.js"></script>
+    <script rel="script" src="js/hook.js"></script>
+</head>
+<body>
+<div class="hook_one">
+    <div class="hookone_one">
+        <a href="index.html"><img src="images/hookone.png" class="hookone_oneimg"></a>
+    </div>
+    <ul class="hookone_two">
+        <li><a  class="hookone_twoa" href="about.html">关于勾勾<p class="hookone_twop">ABOUT</p></a></li>
+        <li><a class="hookone_twoa"  href="product.html">课程产品<p class="hookone_twop">COURSE</p></a></li>
+        <li class="hookone_twoli"><a class="hookone_twoa about_a"  href="study.html">学习资料<p class="hookone_twop">LEARNING</p></a></li>
+    </ul>
+</div>
+<div class="study_one">
+    <div class="study_con">
+        <h1 class="study_oneh1">勾勾绘本馆</h1>
+        <span class="study_onesp">GOGO KID’S REPUBLIC</span>
+        <b class="study_oneb">最理想的人生莫过于一半在路上一半在书房。良好的阅读惯性是孩子受益终生的习惯。勾勾英语的每一家语言中心都配有一流的勾勾绘本馆，让孩子们能够适应英文阅读环境同时培养英文阅读习惯。</b>
+    </div>
+    <div class="study_two">
+        <p class="study_twop">免费借阅适用于2—15岁不同年龄的段孩子的阅读书籍</p>
+        <p class="study_twop studyp">两万册精选原版进口儿童绘本</p>
+        <p class="study_twop studyp2">绘本课程，绘本分享等阅读活动定期开展</p>
+        <p class="study_twop studyp3">高科技点读与VR体验让阅读动起来</p>
+    </div>
+</div>
+<div class="study_thr">
+    <h1 class="study_thrh1">勾勾自主研发教材</h1>
+    <span class="study_thran">GOGO  TEXTBOOK</span>
+    <p class="study_thrp">中美语言专家联袂制作<br>有声有色 有情有味 权威地道<br>内容丰富让小读者深入体验美国儿童生活的点点滴滴<br>高科技点读与本土美语发音完美呈现</p>
+    <img src="images/gogo_03.jpg" class="study_thrimg">
+</div>
+<div class="hook_eig" style="margin-top: 0;">
+    <img src="images/phon.png" class="hook_eigimg">
+    <b class="hook_eigb">联系我们</b>
+    <a href="tel:4000-780-791" class="hook_eiga">4000-780-791</a>
+    <span class="hook_eigsp">立即领取价值<br>500元体验课程</span>
+    <a class="hook_eigaa" href="fre.html">马上预约</a>
+</div>
+<div class="hook_foot">
+    <p class="hookfoot_pone">北京勾勾教育咨询有限公司</p>
+    <p class="hookfoot_ptwo">北京市朝阳区景华南街1号 旺座中心西塔16层 京ICP备案19004748号</p>
+</div>
+<div id="goToTop" ><a href="javascript:;"><img src="images/upup.png" class="goToTopa"></a></div>
+<script src="js/swiper.min.js"></script>
+<script src="js/scrollReveal.js"></script>
+<script>
+    (function(){
+        window.scrollReveal = new scrollReveal({ reset: true,duration: 800, distance   : "0px"});
+        $('#goToTop').hide();        //隐藏go to top按钮
+        $(window).scroll(function(){
+            // console.log($(this).scrollTop());
+            //当window的scrolltop距离大于1时，go to
+            if($(this).scrollTop() > 100){
+                $('#goToTop').fadeIn();
+            }else{
+                $('#goToTop').fadeOut();
+            }
+        });
+        $('#goToTop a').click(function(){
+            $('html ,body').animate({scrollTop: 0}, 300);
+            return false;
+        });
+    })();
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop:true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    $('.aboution span').click(function() {
+        var i = $(this).index();//下标第一种写法
+        $(this).addClass('spantion').siblings().removeClass('spantion');
+        $('.contion').eq(i).show().siblings().hide();
+    });
+    //点击按钮
+    $('.auction_oneipt').on('click',function () {
+        ($(this).addClass('auction_twoipt'))
+    })
+</script>
+
+</body>
+</html>

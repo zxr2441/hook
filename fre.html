@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>免费预约</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script rel="script" src="js/jquery.min.js"></script>
+    <script rel="script" src="js/hook.js"></script>
+</head>
+<body style="background:#0f0f1c;">
+<div class="free_con">
+    <img src="images/free_02.jpg" class="free_oneimg">
+    <form action="free.html" method="get" id="conform">
+        <input type="text" class="free_two" name="name" id="name" placeholder="孩子姓名" value="">
+        <select class="free_thr" name="year" id="year" placeholder="孩子年龄" value="孩子年龄">
+            <option value="">孩子年龄</option>
+            <option value="2-6岁">2-6岁</option>
+            <option value="6-10岁">6-12岁</option>
+            <option value="10-15岁">12-18岁</option>
+        </select>
+        <input type="number" class="free_thr" name="phone" id="phone" placeholder="家长电话" value="">
+        <input type="button" id="submit_con" class="yuyue" value="立即预约">
+    </form>
+</div>
+<script src="js/trace.js"></script>
+<script>
+    var ad = getAd();
+    var teleReg = /^1[35678][0-9][0-9]{8}$/;
+    var updata = {};
+    $("#submit_con").click(function () { //ajax
+
+        if ($("#name").val() == "") {
+            alert("请输入正确名字");
+            return false;
+        }
+        else if ($("#year").val() == "") {
+            alert("请选择年龄");
+            return false;
+        }
+        else if ($("#phone").val() == "" || !teleReg.test($("#phone").val())) {
+            alert("请输入正确手机号");
+            return false;
+        }
+        updata.name = $("#name").val();
+        updata.phone = $("#phone").val();
+        updata.year = $("#year").val();
+        updata.ad = getAd();
+        console.log(updata);
+        $(this).attr('disabled', true);
+        $("#conform").submit();
+    });
+</script>
+</body>
+</html>
